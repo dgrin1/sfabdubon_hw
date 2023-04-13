@@ -53,7 +53,7 @@ plt.show()
 #     fomega = -(g/l)*np.sin(theta)+C*np.cos(theta)*np.sin(omega*t)
 #     return np.array ([ftheta,fomega], float)
 # Part (b): Finding the value of omega that makes the pendulum resonate
-omega_vals = np.linspace(0, 100, 100000)
+omega_vals = np.linspace(5, 15, 1000)
 max_amplitude = -np.inf
 amplitude_points = []
 for t in tpoints:
@@ -77,7 +77,7 @@ for omega in omega_vals:
     
 # Plot the resonant frequency result
 print("Resonant frequency: {:.3f} Hz".format(resonant_omega/(2*np.pi)))
-plt.plot(omega_vals, amplitude_points)
+plt.plot(tpoints, amplitude_points)
 plt.xlabel("Time (s)")
 plt.ylabel("Angle (radians)")
 plt.title("Pendulum with Driven Force (Resonant Frequency) of {:.3f} Hz".format(resonant_omega/(2*np.pi)) )
